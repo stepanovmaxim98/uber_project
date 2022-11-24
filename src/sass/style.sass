@@ -1,4 +1,12 @@
 $main_color: #1EACC7
+$second-color: #ff5656
+
+=btn_hover
+  &:hover
+    background-image: none
+    background-color: $main_color 
+
+
 *
   font-family: 'Roboto', sans-serif
 
@@ -72,6 +80,7 @@ nav
     background: linear-gradient(0deg, #1EACC7 0%, #4CE2FF 100%)
     box-shadow: inset 0px -3px 0px rgba(0, 0, 0, 0.12)
     border-radius: 4px
+    +btn_hover
 
 .promo
   height: 800px
@@ -113,6 +122,7 @@ nav
     text-transform: uppercase
     color: #FFFFFF
     text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.21)
+    +btn_hover
 
 .reasons
   padding: 70px 0 65px 0
@@ -269,13 +279,34 @@ nav
         border-radius: 100%
         padding: 6px
         cursor: pointer
-     
+        transition: 0.3s all
+        &:before
+          content: ''
+          display: block
+          width: 14px
+          height: 2px
+          background-color: $main_color
+          transition: 0.3s all
+        &:after
+          content: ''
+          position: absolute
+          left: 50%
+          transform: translateX(-50%)
+          display: block
+          height: 14px 
+          width: 2px
+          background-color: $main_color
+          transition: 0.3s all
+        &:hover
+          &:before, &:after
+            background-color: $second_color
+
+
 .choice
   position: relative
   min-height: 898px
   padding: 53px 0 170px 0
   background: url('../img/mobile_bg.png') center ( center / cover ) no-repeatz
-  z-index: 2
   &_img
     position: relative
     display: block
@@ -297,6 +328,11 @@ nav
   background-color: #070716
   z-index: 1
 
-
+.require
+  padding: 68px 0 84px 0
+  &_block
+    margin: 33px 0 33px 0
+    &_nbm
+      margin-bottom: 
 
     
